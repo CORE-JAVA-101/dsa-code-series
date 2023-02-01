@@ -11,13 +11,49 @@ public class TraversalUtils {
     return null;
   }
 
-  public List<Integer> left_view_traverse() {
-    return null;
+  public List<Integer> left_view_traverse(TreeNode root) {
+    List<Integer> list = new ArrayList<>();
+    Deque<TreeNode> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      int q_size = queue.size();
+      int index = 0;
+      boolean elementFound = false;
+      while (index < q_size) {
+        TreeNode currentNode = queue.pollFirst();
+        if (!elementFound) {
+          list.add(currentNode.data);
+          elementFound = true;
+        }
+        if (currentNode.left != null) queue.addLast(currentNode.left);
+        if (currentNode.right != null) queue.addLast(currentNode.right);
+        index++;
+      }
+    }
+    return list;
   }
 
 
-  public List<Integer> right_view_traverse() {
-    return null;
+  public List<Integer> right_view_traverse(TreeNode root) {
+    List<Integer> list = new ArrayList<>();
+    Deque<TreeNode> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      int q_size = queue.size();
+      int index = 0;
+      boolean elementFound = false;
+      while (index < q_size) {
+        TreeNode currentNode = queue.pollLast();
+        if (!elementFound) {
+          list.add(currentNode.data);
+          elementFound = true;
+        }
+        if (currentNode.right != null) queue.addFirst(currentNode.right);
+        if (currentNode.left != null) queue.addFirst(currentNode.left);
+        index++;
+      }
+    }
+    return list;
   }
 
   public List<Integer> vertical_order_traverse() {
