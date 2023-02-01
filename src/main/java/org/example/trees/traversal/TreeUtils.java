@@ -30,6 +30,14 @@ public class TreeUtils {
     return treeNode1;
   }
 
+  /**
+   *  h = 0, for single node
+   *  h = -1 when node is null
+   *
+   *  h is number of edges from root to farther leaf node
+   * @param root
+   * @return
+   */
   public int height(TreeNode root) {
     if (root == null)
       return -1; // ( we should not return 0 here, to adhere number of nodes = 2^(h+1) -1 )
