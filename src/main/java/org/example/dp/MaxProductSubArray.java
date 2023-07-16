@@ -4,9 +4,12 @@ public class MaxProductSubArray {
 
   public int solution(int[] input) {
 
+    if(input.length == 0)
+      return 0;
+
     int result = input[0];
 
-    int currentMax = input[0], currentMin = input[0];
+    int currentMax =1, currentMin = 1;
 
     for (int num : input) {
       if (num == 0) {
