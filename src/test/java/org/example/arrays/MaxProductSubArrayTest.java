@@ -1,5 +1,6 @@
-package org.example.dp;
+package org.example.arrays;
 
+import org.example.arrays.MaxProductSubArray;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

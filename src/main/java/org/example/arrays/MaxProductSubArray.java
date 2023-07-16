@@ -1,4 +1,4 @@
-package org.example.dp;
+package org.example.arrays;
 
 public class MaxProductSubArray {
 
