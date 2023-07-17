@@ -1,4 +1,4 @@
-package org.example.stack.arrays;
+package org.example.arrays;
 
 public class FindPeakElement {
 
