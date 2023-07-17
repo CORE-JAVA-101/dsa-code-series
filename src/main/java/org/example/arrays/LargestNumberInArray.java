@@ -1,4 +1,4 @@
-package org.example.arrays;
+package org.example.stack.arrays;
 
 public class LargestNumberInArray {
 
