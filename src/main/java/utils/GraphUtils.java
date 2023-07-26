@@ -8,7 +8,7 @@ public class GraphUtils {
    *  a ---> b
    *  |     |
    *  |     |
-   *  c---->d
+   *  c     d
    *  |
    *  |
    *  e--->f
