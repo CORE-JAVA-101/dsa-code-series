@@ -21,9 +21,7 @@ public class DepthFirstTraversal {
       if (top.getEdges().size() == 0) {
         continue;
       }
-      top.getEdges().forEach(e -> {
-        stack.push(e);
-      });
+      top.getEdges().forEach(stack::push);
     }
     System.out.println(traversedNodeNames);
     return traversedNodeNames;

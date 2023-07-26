@@ -21,9 +21,7 @@ public class BreadthFirstTraversal {
       if(node.getEdges().size()==0){
         continue;
       }
-      front.getEdges().forEach(e->{
-        queue.offer(e);
-      });
+      front.getEdges().forEach(queue::offer);
     }
     System.out.println(nodes);
     return nodes;
