@@ -12,10 +12,8 @@ public class HasPathDfs {
     }
 
     List<Node> edges = source.getEdges();
-    boolean flag = false;
     for (Node node : edges) {
-      flag = solution(node, dest);
-      if(flag){
+      if (solution(node, dest)) {
         return true;
       }
     }
