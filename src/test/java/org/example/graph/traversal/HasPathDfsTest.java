@@ -36,7 +36,7 @@ public class HasPathDfsTest {
     boolean flag = hasPathDfs.solution(node2, node1); // path doesn't exist
     Assert.assertEquals(flag, false);
 
-    flag = hasPathDfs.solution(node2, node6); // path exist
+    flag = hasPathDfs.solution(node2, node5); // path exist
     Assert.assertEquals(flag, true);
   }
 }

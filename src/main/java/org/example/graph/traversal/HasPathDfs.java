@@ -15,7 +15,10 @@ public class HasPathDfs {
     boolean flag = false;
     for (Node node : edges) {
       flag = solution(node, dest);
+      if(flag){
+        return true;
+      }
     }
-    return flag;
+    return false;
   }
 }
