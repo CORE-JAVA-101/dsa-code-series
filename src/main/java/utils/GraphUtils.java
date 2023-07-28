@@ -64,7 +64,7 @@ public class GraphUtils {
     return Graph.getInstance().getRootNode();
   }
 
-  public static Graph create(String[][] edges) {
+  public static Graph createUndirectedPathGraph(String[][] edges) {
     for (String[] edge : edges) {
       String v1 = edge[0];
       String v2 = edge[1];

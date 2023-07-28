@@ -52,4 +52,9 @@ public class Node {
   public String asString(){
     return this.name + " : " + edges.stream().map(e-> e.getName()).collect(Collectors.toList());
   }
+
+  @Override
+  public String toString() {
+    return this.name + ":"+this.weight + ":" + edges.stream().map(e->e.getName()).collect(Collectors.toList());
+  }
 }

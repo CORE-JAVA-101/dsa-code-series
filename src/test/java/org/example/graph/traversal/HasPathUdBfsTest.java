@@ -5,8 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import utils.GraphUtils;
 
-import static org.junit.Assert.*;
-
 public class HasPathUdBfsTest {
 
   @Test
@@ -19,9 +17,10 @@ public class HasPathUdBfsTest {
         {"e","c"},
     };
 
-    GraphUtils.Graph graph = GraphUtils.create(edges);
-    Node node1 = graph.getNode("e");
-    Node node2 = graph.getNode("a");
+    GraphUtils.Graph graph = GraphUtils.createUndirectedPathGraph(edges);
+    GraphUtils.displayAdjacencyList(graph.getRootNode());
+    Node node1 = graph.getNode("a");
+    Node node2 = graph.getNode("d");
 
     HasPathUdBfs hasPathUdDfs = new HasPathUdBfs();
     boolean status = hasPathUdDfs.solution(node1, node2);
