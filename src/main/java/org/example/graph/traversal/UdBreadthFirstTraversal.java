@@ -13,20 +13,20 @@ import java.util.Set;
 public class UdBreadthFirstTraversal {
 
   public Set<String> solution(Node node) {
-    Set<String> nodeNames = new HashSet<>();
-    traverse(nodeNames, node);
-    return nodeNames;
+    Set<String> visitedNodeNames = new HashSet<>();
+    traverse(visitedNodeNames, node);
+    return visitedNodeNames;
   }
 
-  private static void traverse(Set<String> nodeNames, Node node) {
+  private static void traverse(Set<String> visitedNodeNames, Node node) {
     Queue<Node> queue = new LinkedList<>();
     queue.add(node);
     while (!queue.isEmpty()) {
       Node current = queue.poll();
-      if (nodeNames.contains(current.getName())) { // this will help avoid visiting same node
+      if (visitedNodeNames.contains(current.getName())) { // this will help avoid visiting same node
         continue;
       }
-      nodeNames.add(current.getName());
+      visitedNodeNames.add(current.getName());
       current.getEdges().forEach(queue::add);
     }
   }
