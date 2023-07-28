@@ -2,6 +2,7 @@ package org.example.graph;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Node {
 
@@ -46,5 +47,9 @@ public class Node {
   public Node addEdge(Node n){
     this.edges.add(n);
     return this;
+  }
+
+  public String asString(){
+    return this.name + " : " + edges.stream().map(e-> e.getName()).collect(Collectors.toList());
   }
 }

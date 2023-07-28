@@ -2,20 +2,28 @@ package utils;
 
 import org.example.graph.Node;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 public class GraphUtils {
 
   /**
-   *  a ---> b
-   *  |     |
-   *  |     |
-   *  c     d
-   *  |
-   *  |
-   *  e--->f
+   * a ---> b
+   * |     |
+   * |     |
+   * c     d
+   * |
+   * |
+   * e--->f
+   *
    * @return
    */
 
-  public static Node getGraph(){
+  public static Node getGraph() {
     Node node1 = new Node("a");
     Node node2 = new Node("b");
     Node node3 = new Node("c");
@@ -28,5 +36,57 @@ public class GraphUtils {
     node3.addEdge(node5);
     node5.addEdge(node6);
     return node1;
+  }
+
+  public static void displayAdjacencyList(Node node){
+    Queue<Node> queue = new LinkedList<>();
+    Set<String> names = new HashSet<>();
+    queue.add(node);
+    names.add(node.getName());
+    while(!queue.isEmpty()){
+      Node current = queue.poll();
+      System.out.println(current.asString());
+      current.getEdges().forEach(e->{
+        if(!names.contains(e.getName())){
+          queue.add(e);
+          names.add(e.getName());
+        }
+      });
+    }
+  }
+
+  public static Node uniDirectedGraph(String[][] edges) {
+    for (String[] edge : edges) {
+      String v1 = edge[0];
+      String v2 = edge[1];
+      Graph.addMapping(v1,v2);
+    }
+    return Graph.getRootNode();
+  }
+
+  private static class Graph {
+    private static Map<String, Node> nodeMapping = new HashMap<>();
+    private static Node rootNode = null;
+
+    public static void addMapping(String name1, String name2) {
+      if (!nodeMapping.containsKey(name1)) {
+        Node node = new Node(name1);
+        if (rootNode == null) {
+          rootNode = node;
+        }
+        nodeMapping.put(name1, node);
+      }
+      if (!nodeMapping.containsKey(name2)) {
+        Node node = new Node(name2);
+        nodeMapping.put(name2, node);
+      }
+      nodeMapping.get(name1).addEdge(nodeMapping.get(name2));
+      nodeMapping.get(name2).addEdge(nodeMapping.get(name1));
+    }
+
+    private static Node getRootNode() {
+      return rootNode;
+    }
+
   }
 }
