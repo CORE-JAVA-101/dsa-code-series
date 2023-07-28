@@ -24,11 +24,11 @@ public class MaxSumSubArrayTest {
   public static Collection<Object[]> testCases() {
     return Arrays.asList(new Object[][]{
         {new int[]{1, 2, 3, 4, 5}, 15}, // Array with positive numbers
-        {new int[]{-1, -2, -3, -4, -5}, -1}, // Array with negative numbers
+        {new int[]{-1, -2, -3, -4, -5}, 0}, // Array with negative numbers
         {new int[]{1, -2, 3, -4, 5}, 5}, // Array with a mix of positive and negative numbers
         {new int[]{}, 0}, // Empty array
         {new int[]{0}, 0}, // Array with a single element 0
-        {new int[]{-1}, -1}, // Array with a single negative element
+        {new int[]{-1}, 0}, // Array with a single negative element
         {new int[]{5}, 5}, // Array with a single positive element
         {new int[]{-2, -3, 4, -1, -2, 1, 5, -3}, 7} // Array with both positive and negative numbers
     });

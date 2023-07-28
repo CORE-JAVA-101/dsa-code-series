@@ -45,7 +45,9 @@ public class Node {
   }
 
   public Node addEdge(Node n){
-    this.edges.add(n);
+    if(n!=null) {
+      this.edges.add(n);
+    }
     return this;
   }
 

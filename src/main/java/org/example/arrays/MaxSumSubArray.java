@@ -3,10 +3,10 @@ package org.example.arrays;
 public class MaxSumSubArray {
 
   public int solution(int[] input) {
-    int currSum = input[0];
-    int maxSum = input[0];
-    for (int num : input) {
-      currSum = currSum + num;
+    int currSum = 0;
+    int maxSum = 0;
+    for (int i=0;i<input.length; i++) {
+      currSum = currSum + input[i];
       if (currSum < 0) {
         currSum = 0;
       }
