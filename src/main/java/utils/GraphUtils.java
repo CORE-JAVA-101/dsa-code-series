@@ -59,16 +59,28 @@ public class GraphUtils {
     for (String[] edge : edges) {
       String v1 = edge[0];
       String v2 = edge[1];
-      Graph.addMapping(v1,v2);
+      Graph.getInstance().addMapping(v1,v2);
     }
-    return Graph.getRootNode();
+    return Graph.getInstance().getRootNode();
   }
 
-  private static class Graph {
-    private static Map<String, Node> nodeMapping = new HashMap<>();
-    private static Node rootNode = null;
+  public static Graph create(String[][] edges) {
+    for (String[] edge : edges) {
+      String v1 = edge[0];
+      String v2 = edge[1];
+      Graph.getInstance().addMapping(v1,v2);
+    }
+    return Graph.getInstance();
+  }
+  public static class Graph {
+    private static Graph INSTANCE = new Graph();
+    private  Map<String, Node> nodeMapping = new HashMap<>();
+    private  Node rootNode = null;
 
-    public static void addMapping(String name1, String name2) {
+    public static Graph getInstance(){
+      return INSTANCE;
+    }
+    public  void addMapping(String name1, String name2) {
       if (!nodeMapping.containsKey(name1)) {
         Node node = new Node(name1);
         if (rootNode == null) {
@@ -84,8 +96,12 @@ public class GraphUtils {
       nodeMapping.get(name2).addEdge(nodeMapping.get(name1));
     }
 
-    private static Node getRootNode() {
+    public Node getRootNode() {
       return rootNode;
+    }
+
+    public Node getNode(String name){
+      return nodeMapping.get(name);
     }
 
   }
