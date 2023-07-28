@@ -1,0 +1,46 @@
+package org.example.graph.traversal;
+
+import org.example.graph.Node;
+import utils.GraphUtils;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * un-directed graph connected component
+ *
+ *  1-2
+ *
+ *  3-4-5
+ *    |
+ *    6
+ *
+ *  7-8
+ *
+ *  Here we have 3 connected components
+ */
+public class ConnectedComponentDfs {
+
+  public int solution(GraphUtils.Graph graph) {
+    int count = 0;
+    Set<String> nodes = graph.getNodes();
+    Set<String> visitedNodes = new HashSet<>();
+    for (String nodeName : nodes) {
+      boolean flag = traverse(graph.getNode(nodeName), visitedNodes);
+      if (flag)
+        count++;
+    }
+    return count;
+  }
+
+  private boolean traverse(Node node, Set<String> visitedNodes) {
+    if (visitedNodes.contains(node.getName())) { // already visited node
+      return false;
+    }
+    visitedNodes.add(node.getName());
+    for (Node current : node.getEdges()) { // explore neighbours
+      traverse(current, visitedNodes);
+    }
+    return true; // after neighbour explore return true
+  }
+}
