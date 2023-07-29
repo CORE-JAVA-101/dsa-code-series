@@ -17,7 +17,7 @@ import java.util.Set;
  *
  *  7-8
  *
- *  Here we have 3 connected components
+ *  Here we have 3 connected components in the graph
  */
 public class ConnectedComponentDfs {
 
