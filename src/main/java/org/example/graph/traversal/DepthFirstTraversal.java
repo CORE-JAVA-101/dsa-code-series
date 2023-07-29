@@ -18,10 +18,10 @@ public class DepthFirstTraversal {
     while (!stack.isEmpty()) {
       Node top = stack.pop();
       traversedNodeNames.add(top.getName());
-      if (top.getEdges().size() == 0) {
+      if (top.getNeighbours().size() == 0) {
         continue;
       }
-      top.getEdges().forEach(stack::push);
+      top.getNeighbours().forEach(stack::push);
     }
     System.out.println(traversedNodeNames);
     return traversedNodeNames;

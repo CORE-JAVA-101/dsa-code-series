@@ -17,7 +17,7 @@ public class HasPathUdDfs {
       return true;
     }
 
-    for (Node current : source.getEdges()) {
+    for (Node current : source.getNeighbours()) {
       if (!visitedNodes.contains(current.getName()) && solution(current, dest)) {
         return true;
       }

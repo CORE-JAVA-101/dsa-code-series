@@ -38,7 +38,7 @@ public class ConnectedComponentDfs {
       return false;
     }
     visitedNodes.add(node.getName());
-    for (Node current : node.getEdges()) { // explore neighbours
+    for (Node current : node.getNeighbours()) { // explore neighbours
       traverse(current, visitedNodes);
     }
     return true; // after neighbour explore return true

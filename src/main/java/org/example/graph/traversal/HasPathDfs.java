@@ -11,7 +11,7 @@ public class HasPathDfs {
       return true;
     }
 
-    List<Node> edges = source.getEdges();
+    List<Node> edges = source.getNeighbours();
     for (Node node : edges) {
       if (solution(node, dest)) {
         return true;

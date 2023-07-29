@@ -4,7 +4,6 @@ import org.example.graph.Node;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class DepthFirstTraversalRecursion {
 
@@ -19,7 +18,7 @@ public class DepthFirstTraversalRecursion {
       return;
     }
     traversalNames.add(node.getName());
-    List<Node> edges = node.getEdges();
+    List<Node> edges = node.getNeighbours();
     for(Node edge: edges) {
       recursive(edge, traversalNames);
     }

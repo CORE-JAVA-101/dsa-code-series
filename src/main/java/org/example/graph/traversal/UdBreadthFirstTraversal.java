@@ -27,7 +27,7 @@ public class UdBreadthFirstTraversal {
         continue;
       }
       visitedNodeNames.add(current.getName());
-      current.getEdges().forEach(queue::add);
+      current.getNeighbours().forEach(queue::add);
     }
   }
 }

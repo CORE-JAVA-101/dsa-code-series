@@ -19,7 +19,7 @@ public class HasPathUdBfs {
     queue.add(source);
     while(!queue.isEmpty()){
       Node current = queue.poll();
-      queue.addAll(current.getEdges());
+      queue.addAll(current.getNeighbours());
       if(current.getName().equals(dest.getName())){
         return true;
       }

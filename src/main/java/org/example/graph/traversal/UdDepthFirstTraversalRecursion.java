@@ -2,9 +2,7 @@ package org.example.graph.traversal;
 
 import org.example.graph.Node;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,7 +21,7 @@ public class UdDepthFirstTraversalRecursion {
       return;
     }
     nodeNames.add(node.getName());
-    for (Node edge : node.getEdges()) {
+    for (Node edge : node.getNeighbours()) {
       recursive(nodeNames, edge);
     }
   }

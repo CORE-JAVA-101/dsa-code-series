@@ -31,10 +31,10 @@ public class GraphUtils {
     Node node5 = new Node("e");
     Node node6 = new Node("f");
 
-    node1.addEdge(node2).addEdge(node3);
-    node2.addEdge(node4);
-    node3.addEdge(node5);
-    node5.addEdge(node6);
+    node1.addNeighbour(node2).addNeighbour(node3);
+    node2.addNeighbour(node4);
+    node3.addNeighbour(node5);
+    node5.addNeighbour(node6);
     return node1;
   }
 
@@ -46,7 +46,7 @@ public class GraphUtils {
     while (!queue.isEmpty()) {
       Node current = queue.poll();
       System.out.println(current.asString());
-      current.getEdges().forEach(e -> {
+      current.getNeighbours().forEach(e -> {
         if (!names.contains(e.getName())) {
           queue.add(e);
           names.add(e.getName());
@@ -101,8 +101,8 @@ public class GraphUtils {
         nodeMapping.put(name2, node);
       }
       if(name1!=null && name2!=null) {
-        nodeMapping.get(name1).addEdge(nodeMapping.get(name2));
-        nodeMapping.get(name2).addEdge(nodeMapping.get(name1));
+        nodeMapping.get(name1).addNeighbour(nodeMapping.get(name2));
+        nodeMapping.get(name2).addNeighbour(nodeMapping.get(name1));
       }
     }
 

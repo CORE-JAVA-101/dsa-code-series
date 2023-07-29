@@ -18,10 +18,10 @@ public class BreadthFirstTraversal {
     while(!queue.isEmpty()){
       Node front = queue.poll();
       nodes.add(front.getName());
-      if(node.getEdges().size()==0){
+      if(node.getNeighbours().size()==0){
         continue;
       }
-      front.getEdges().forEach(queue::offer);
+      front.getNeighbours().forEach(queue::offer);
     }
     System.out.println(nodes);
     return nodes;

@@ -26,11 +26,11 @@ public class HasPathDfsTest {
     Node node5 = new Node("e");
     Node node6 = new Node("f");
 
-    node1.addEdge(node2).addEdge(node3);
-    node2.addEdge(node4);
-    node4.addEdge(node3);
-    node3.addEdge(node5);
-    node5.addEdge(node6);
+    node1.addNeighbour(node2).addNeighbour(node3);
+    node2.addNeighbour(node4);
+    node4.addNeighbour(node3);
+    node3.addNeighbour(node5);
+    node5.addNeighbour(node6);
 
     HasPathDfs hasPathDfs = new HasPathDfs();
     boolean flag = hasPathDfs.solution(node2, node1); // path doesn't exist

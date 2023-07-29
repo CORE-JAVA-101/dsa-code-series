@@ -19,7 +19,7 @@ public class HasPathBfs {
       if (current.getName().equals(dest.getName())) {
         return true;
       }
-      current.getEdges().forEach(queue::add);
+      current.getNeighbours().forEach(queue::add);
     }
     return false;
   }
