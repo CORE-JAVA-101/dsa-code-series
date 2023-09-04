@@ -12,12 +12,6 @@ import java.util.Set;
  */
 public class UdBreadthFirstTraversal {
 
-  public Set<String> solution(Node node) {
-    Set<String> visitedNodeNames = new HashSet<>();
-    traverse(visitedNodeNames, node);
-    return visitedNodeNames;
-  }
-
   private static void traverse(Set<String> visitedNodeNames, Node node) {
     Queue<Node> queue = new LinkedList<>();
     queue.add(node);
@@ -29,5 +23,11 @@ public class UdBreadthFirstTraversal {
       visitedNodeNames.add(current.getName());
       current.getNeighbours().forEach(queue::add);
     }
+  }
+
+  public Set<String> solution(Node node) {
+    Set<String> visitedNodeNames = new HashSet<>();
+    traverse(visitedNodeNames, node);
+    return visitedNodeNames;
   }
 }

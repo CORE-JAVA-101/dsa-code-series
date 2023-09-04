@@ -17,10 +17,10 @@ public class HasPathUdBfs {
 
     Queue<Node> queue = new LinkedList<>();
     queue.add(source);
-    while(!queue.isEmpty()){
+    while (!queue.isEmpty()) {
       Node current = queue.poll();
       queue.addAll(current.getNeighbours());
-      if(current.getName().equals(dest.getName())){
+      if (current.getName().equals(dest.getName())) {
         return true;
       }
     }
