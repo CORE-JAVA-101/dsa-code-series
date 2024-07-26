@@ -2,6 +2,7 @@ package org.example.dp;
 
 import org.example.dp.sum.HowTargetSum_Memo;
 import org.example.dp.sum.HowTargetSum_Recursion;
+import org.example.dp.sum.HowTargetSum_Recursion_UseOnce;
 import org.example.dp.sum.HowTargetSum_Tabulation;
 import org.example.dp.sum.Shortest_HowTargetSum_Recursion;
 import org.example.dp.sum.Shortest_HowTargetSum_Tabulation;
@@ -11,9 +12,29 @@ import org.example.dp.sum.TargetSumExists_Tabulation;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class TargetSumTest {
 
+  /**
+   *  use each item of inputs only once
+   */
+  @Test
+  public void combination_TargetSum_UseOnce() {
+    int[] arr = {2, 3, 4};
+    int target = 7;
+    //RECURSION: find one of the combination for targetsum
+    HowTargetSum_Recursion_UseOnce recursion = new HowTargetSum_Recursion_UseOnce();
+    List<List<Integer>> list = null; //recursion.solution(target, arr);
+    System.out.println(list);
+
+    arr = new int[]{1,1,2,5,6,7,10};
+    target = 8;
+    recursion = new HowTargetSum_Recursion_UseOnce();
+    list = recursion.solution(target, arr);
+    System.out.println(list);
+
+  }
   /**
    * 2. return the combination [] for target sum
    */
