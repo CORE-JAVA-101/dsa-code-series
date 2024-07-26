@@ -1,20 +1,26 @@
 package org.example.dp.sum;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class HowTargetSum_Recursion {
 
   public int[] solution(int target, int[] inputs) {
      if(target == 0) return new int[0];
      if(target < 0) return null;
 
+     int[] bestResult = null;
      for(int item: inputs){
        int rem = target - item;
        int[] result = solution(rem, inputs);
        if(result!=null){
          int[] mergedResult = merge(target, result, new int[]{item});
-         return mergedResult;
+         bestResult = mergedResult;
+         return bestResult;
        }
      }
-     return null;
+     return bestResult;
   }
 
   public int[] merge(int length, int[] arr1, int[] arr2) {
