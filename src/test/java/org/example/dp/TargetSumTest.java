@@ -26,7 +26,6 @@ public class TargetSumTest {
     //RECURSION: find one of the combination for targetsum
     HowTargetSum_Recursion_UseOnce recursion = new HowTargetSum_Recursion_UseOnce();
     List<List<Integer>> list = null; //recursion.solution(target, arr);
-    System.out.println(list);
 
     arr = new int[]{1,1,2,5,6,7,10};
     target = 8;

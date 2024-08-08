@@ -1,6 +1,6 @@
 package org.example.threads;
 
-public class Printer {
+public class PrinterProblem {
 
   public static void main(String[] args) {
     boolean[] arr = {false};
@@ -33,7 +33,7 @@ public class Printer {
             arr[0] = false;
             arr.notify();
           } else {
-            Printer.wait(arr);
+            PrinterProblem.wait(arr);
           }
         }
       }
@@ -66,7 +66,7 @@ public class Printer {
             arr[0] = true;
             arr.notify();
           } else {
-            Printer.wait(arr);
+            PrinterProblem.wait(arr);
           }
         }
       }

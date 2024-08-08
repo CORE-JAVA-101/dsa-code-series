@@ -11,7 +11,6 @@ public class GridPathMaxSumMemo {
     }
     if( i >= m || j >= n) return 0;
     if(tab[i][j] !=0) return tab[i][j];
-    if(i == m && j == n) return arr[i-1][j-1];
     int down = solution(arr, i+1, j, m, n);
     int right = solution(arr, i, j+1, m, n);
     int result = arr[i][j]  +  Math.max(down, right);

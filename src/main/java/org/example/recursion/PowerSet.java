@@ -15,17 +15,31 @@ public class PowerSet {
 
   }
 
+  /**
+   * [1,2,3]
+   *                                       []
+   *                           [1]          |          []         index=0
+   *                    [1,2]         [1]   |    [2]       []     index=1
+   *              [1,2,3] [1,2] | [1,3] [1] | [2,3] [2] | [3] []  index=2
+   *
+   * @param arr
+   * @param index
+   * @param current
+   * @param solutions
+   */
+
   private void solution(int[] arr, int index,
                         List<Integer> current,
                         List<List<Integer>> solutions){
-    if(index == arr.length){
+    if(index == arr.length){ // that means leaf node arrived in recursion tree
       solutions.add(new ArrayList<>(current));
       return;
     }
-    current.add(arr[index]);
-    solution(arr, index + 1, new ArrayList<>(current), solutions);
+    List<Integer> inclusion = new ArrayList<>(current);// inclusion
+    inclusion.add(arr[index]);
+    solution(arr, index + 1, inclusion, solutions);
 
-    current.remove(current.size() -1);
-    solution(arr, index+1, new ArrayList<>(current), solutions);
+    List<Integer> exclusion = new ArrayList<>(current);// inclusion
+    solution(arr, index+1, exclusion, solutions);
   }
 }

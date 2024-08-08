@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ProducerConsumer {
+public class ProducerConsumerProblem {
 
   public static void main(String[] args) throws InterruptedException {
     List<String> list = new ArrayList<>();
