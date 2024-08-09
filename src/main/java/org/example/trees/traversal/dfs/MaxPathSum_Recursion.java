@@ -4,7 +4,22 @@ import org.example.trees.traversal.TreeNode;
 
 public class MaxPathSum_Recursion {
 
+  public static int solution(TreeNode treeNode){
+    int result = 0;
+    result = iterate(treeNode);
+    return result;
+  }
 
+  private static int iterate(TreeNode treeNode){
+
+    if(treeNode == null){
+      return 0;
+    }
+    int left = iterate(treeNode.left);
+    int right = iterate(treeNode.right);
+
+    return Math.max(left, right) + treeNode.data;
+  }
   public static int getResult(TreeNode treeNode) {
     traverse(treeNode, 0);
     return maxSum;
@@ -40,5 +55,4 @@ public class MaxPathSum_Recursion {
     traverse(root.left, currentSum);
     traverse(root.right, currentSum);
   }
-
 }

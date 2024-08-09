@@ -10,7 +10,8 @@ import java.util.Set;
  */
 public class HasPathUdDfs {
 
-  private Set<String> visitedNodes = new HashSet<>();
+  private final Set<String> visitedNodes = new HashSet<>();
+
   public boolean solution(Node source, Node dest) {
     visitedNodes.add(source.getName());
     if (source.getName().equals(dest.getName())) {

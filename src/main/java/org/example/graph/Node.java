@@ -14,7 +14,7 @@ public class Node {
     this(name, 0);
   }
 
-  public Node(String name, int weight){
+  public Node(String name, int weight) {
     this.name = name;
     this.weight = weight;
     this.neighbours = new ArrayList<>();
@@ -44,19 +44,19 @@ public class Node {
     this.neighbours = neighbours;
   }
 
-  public Node addNeighbour(Node n){
-    if(n!=null) {
+  public Node addNeighbour(Node n) {
+    if (n != null) {
       this.neighbours.add(n);
     }
     return this;
   }
 
-  public String asString(){
-    return this.name + " : " + neighbours.stream().map(e-> e.getName()).collect(Collectors.toList());
+  public String asString() {
+    return this.name + " : " + neighbours.stream().map(e -> e.getName()).collect(Collectors.toList());
   }
 
   @Override
   public String toString() {
-    return this.name + ":"+this.weight + ":" + neighbours.stream().map(e->e.getName()).collect(Collectors.toList());
+    return this.name + ":" + this.weight + ":" + neighbours.stream().map(e -> e.getName()).collect(Collectors.toList());
   }
 }

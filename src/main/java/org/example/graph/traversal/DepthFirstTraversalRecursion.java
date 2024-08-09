@@ -13,13 +13,13 @@ public class DepthFirstTraversalRecursion {
     return traversedNodeNames;
   }
 
-  private void recursive(Node node, List<String> traversalNames){
-    if(node== null){
+  private void recursive(Node node, List<String> traversalNames) {
+    if (node == null) {
       return;
     }
     traversalNames.add(node.getName());
     List<Node> edges = node.getNeighbours();
-    for(Node edge: edges) {
+    for (Node edge : edges) {
       recursive(edge, traversalNames);
     }
   }

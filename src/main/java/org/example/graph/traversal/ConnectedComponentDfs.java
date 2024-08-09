@@ -8,16 +8,16 @@ import java.util.Set;
 
 /**
  * un-directed graph connected component
- *
- *  1-2
- *
- *  3-4-5
- *    |
- *    6
- *
- *  7-8
- *
- *  Here we have 3 connected components in the graph
+ * <p>
+ * 1-2
+ * <p>
+ * 3-4-5
+ * |
+ * 6
+ * <p>
+ * 7-8
+ * <p>
+ * Here we have 3 connected components in the graph
  */
 public class ConnectedComponentDfs {
 
